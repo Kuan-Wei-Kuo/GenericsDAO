@@ -4,17 +4,40 @@
 	<groupId>com.example.sample</groupId>
 	<artifactId>GenericsDAO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<hibernate.version>4.3.11.Final</hibernate.version>
+	</properties>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.8.Final</version>
+			<version>${hibernate.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+		<!-- MS SQL -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>
+		</dependency>
+		<!-- DBCP -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.0</version>
+		</dependency>
 	</dependencies>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
