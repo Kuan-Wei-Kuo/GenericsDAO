@@ -20,10 +20,11 @@
 	    <!-- 資料庫使用者 --> 
 	    <property name="connection.username">admin</property> 
 	    <!-- 資料庫密碼 --> 
-	    <property name="connection.password">iisi@3767671</property> 
+	    <property name="connection.password">admin</property> 
 	
    		<!-- 以下設置物件與資料庫表格映射文件 --> 
- 	
+ 		<mapping class="com.example.sample.model.Student"/>
+ 		
     </session-factory> 
 
 </hibernate-configuration>

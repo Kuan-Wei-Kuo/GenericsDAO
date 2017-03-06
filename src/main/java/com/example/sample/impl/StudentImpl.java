@@ -10,7 +10,7 @@ public class StudentImpl {
 
 	public static void main(String[] args) {
 		
-		GenenricsDao<Student> studentDao = new GenenricsDaoImpl<Student>();
+		GenenricsDao<Student> studentDao = new GenenricsDaoImpl<Student>(new Student());
 		
 		ArrayList<Student> studentList = studentDao.findAll();
 		

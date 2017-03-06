@@ -25,6 +25,7 @@
 			<version>1.0.0.Final</version>
 		</dependency>
 		<!-- MS SQL -->
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>sqljdbc4</artifactId>

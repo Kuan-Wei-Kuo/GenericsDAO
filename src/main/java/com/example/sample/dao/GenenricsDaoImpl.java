@@ -1,8 +1,9 @@
 package com.example.sample.dao;
 
-import java.awt.List;
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 
 import com.example.sample.hibernate.HibernateConfig;
@@ -13,8 +14,10 @@ public class GenenricsDaoImpl<T> implements GenenricsDao<T>{
 	
 	private Session session;
 	
-	public GenenricsDaoImpl() {
+	public GenenricsDaoImpl(T entity) {
 		session = HibernateConfig.getSessionFactory().openSession();
+		
+		this.entity = entity;
 	}
 	
 	public T getEntity() {
@@ -24,13 +27,9 @@ public class GenenricsDaoImpl<T> implements GenenricsDao<T>{
 	@SuppressWarnings("unchecked")
 	public ArrayList<T> findAll() {
 		
-		session.beginTransaction();
+		ArrayList<T> resultList = (ArrayList<T>) session.createQuery("from " + entity.getClass().getName()).list();
 		
-		ArrayList<T> resultList = (ArrayList<T>) session.createQuery("from Student").list();
-		
-		for(T t : resultList) {
-			System.out.println(t);
-		}
+		HibernateConfig.shutdown();
 		
 		return resultList;
 	}
